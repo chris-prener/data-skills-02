@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+  padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="data-skills-02---introduction-to-dplyr-for-data-wrangling---complete">Data
+Skills 02 - Introduction to dplyr for Data Wrangling - Complete</h1>
+<p>Christopher Prener, Ph.D. (October 05, 2022)</p>
+<h2 id="r-projects-and-working-directories">R Projects and Working
+Directories</h2>
+<p>R Projects are a special type of file associated with RStudio. They
+create self-contained directories and environments that increase the
+reproducibility of your work. When you set a R project up, it will
+change the <strong>working directory</strong> to the project’s
+directory. This means that all of the data you save from RStudio will be
+saved there by default. It also means that you can open files saved in
+that directory without needing to worry about file paths.</p>
+<p>I’ll give you an R project directory to download for each session.
+However, if you want to create a new project for your own work, go to
+<code>File &gt; New Project...</code> and follow the prompts. You can
+create a new project directory, associate a project with an existing
+directory, and even add <code>git</code> version control!</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>This notebook requires two packages from the <code>tidyverse</code>
+as well as two additional packages:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tidyverse packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)     <span class="co"># data wrangling</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)     <span class="co"># read and write csv files</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># data wrangling</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)   <span class="co"># data wrangling</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># manage file paths</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)      <span class="co"># manage file paths</span></span></code></pre></div>
+<h2 id="reading-data">Reading Data</h2>
+<p>Today, we’ll review how to read <code>.csv</code> files into
+<code>R</code>. We have to files in the <code>data/</code> sub-directory
+of our project:</p>
+<ol style="list-style-type: decimal">
+<li><code>penguins.csv</code> - a cleaner version of the
+<code>penguins</code> data from <code>palmerpenguins</code></li>
+<li><code>penguins_raw.csv</code> - a messier version of the
+<code>penguins</code> data from <code>palmerpenguins</code></li>
+</ol>
+<p>To read <code>.csv</code> files into <code>R</code>, we’ll use the
+<code>readr</code> package’s <code>read_csv()</code> function.
+<strong>This is different from
+<code>utils::read.csv()</code>!</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;penguins.csv&quot;</span>))</span></code></pre></div>
+<pre><code>## Rows: 344 Columns: 8
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): species, island, sex
+## dbl (5): bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, year
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>Now, read in <code>penguins_raw.csv</code> into an object called
+<code>penguins_raw</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;penguins_raw.csv&quot;</span>))</span></code></pre></div>
+<pre><code>## Rows: 344 Columns: 17
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (9): studyName, Species, Region, Island, Stage, Individual ID, Clutch Completion, Sex, Comments
+## dbl  (7): Sample Number, Culmen Length (mm), Culmen Depth (mm), Flipper Length (mm), Body Mass (g), Delta 15 N (o...
+## date (1): Date Egg
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>There is also a package called <code>readxl</code> that works well
+for Excel files and another package called <code>haven</code> that can
+read SPSS, Stata, and SAS data files. Both packages are installed when
+you install the <code>tidyverse</code>.</p>
+<h2 id="fixing-variable-names">Fixing Variable Names</h2>
+<h3 id="with-janitor">With <code>janitor</code></h3>
+<p>One of the issues with both data sets are the variable names. If you
+have a data set with a large number of columns that you’ll want to
+retain, but many of which need to be renamed, the <code>janitor</code>
+package’s <code>clean_names()</code> function can help jump start the
+process.</p>
+<p>We’ll try out <code>clean_names()</code> on the <code>mpg</code>
+data:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="ot">-&gt;</span> penguins_raw</span></code></pre></div>
+<p>This is a <em>pipeline</em>. We can read it like a paragraph,
+inserting the word <em>then</em> every time we see the pipe operator
+(<code>%&gt;%</code>):</p>
+<ol style="list-style-type: decimal">
+<li>First, we take the <code>penguins_raw</code> data,
+<em>then</em></li>
+<li>we clean its names, <em>then</em></li>
+<li>we store the resulting data in the object
+<code>penguins_raw</code>.</li>
+</ol>
+<p>We use pipelines to make our code easier to read.</p>
+<h3 id="with-dplyr">With <code>dplyr</code></h3>
+<p>Ideally, our need to rename variables is more targeted. In that case,
+we can use <code>dplyr</code>’s <code>rename()</code> function to modify
+these names manually:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">sid =</span> study_name,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample =</span> sample_number,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">iid =</span> individual_id</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span> penguins_raw</span></code></pre></div>
+<p>Now, you try on the <code>penguins</code> data. Rename
+<code>bill_length_mm</code>, <code>bill_depth_mm</code> and
+<code>body_mass_g</code>, ideally removing the units of measure:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_length =</span> bill_length_mm,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_depth =</span> bill_depth_mm,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mass =</span> body_mass_g</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span> penguins</span></code></pre></div>
+<h2 id="subsetting-columns">Subsetting Columns</h2>
+<p>We often only want a selection of columns from our data. We can use
+the <code>select()</code> function from <code>dplyr</code> to help get
+us a subset of our data.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, region, iid, body_mass_g)</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 4
+##    species                             region iid   body_mass_g
+##    &lt;chr&gt;                               &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;
+##  1 Adelie Penguin (Pygoscelis adeliae) Anvers N1A1         3750
+##  2 Adelie Penguin (Pygoscelis adeliae) Anvers N1A2         3800
+##  3 Adelie Penguin (Pygoscelis adeliae) Anvers N2A1         3250
+##  4 Adelie Penguin (Pygoscelis adeliae) Anvers N2A2           NA
+##  5 Adelie Penguin (Pygoscelis adeliae) Anvers N3A1         3450
+##  6 Adelie Penguin (Pygoscelis adeliae) Anvers N3A2         3650
+##  7 Adelie Penguin (Pygoscelis adeliae) Anvers N4A1         3625
+##  8 Adelie Penguin (Pygoscelis adeliae) Anvers N4A2         4675
+##  9 Adelie Penguin (Pygoscelis adeliae) Anvers N5A1         3475
+## 10 Adelie Penguin (Pygoscelis adeliae) Anvers N5A2         4250
+## # … with 334 more rows</code></pre>
+<p>Now, you try on the <code>penguins</code> data. Select only the
+columns for species, bill length, and bill depth:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, bill_length, bill_depth)</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 3
+##    species bill_length bill_depth
+##    &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;
+##  1 Adelie         39.1       18.7
+##  2 Adelie         39.5       17.4
+##  3 Adelie         40.3       18  
+##  4 Adelie         NA         NA  
+##  5 Adelie         36.7       19.3
+##  6 Adelie         39.3       20.6
+##  7 Adelie         38.9       17.8
+##  8 Adelie         39.2       19.6
+##  9 Adelie         34.1       18.1
+## 10 Adelie         42         20.2
+## # … with 334 more rows</code></pre>
+<p>The order here matters! <code>select()</code> will reorder your
+columns to match whatever order you enter them in. You can also remove
+columns:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>region)</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 16
+##    sid     sample species island stage iid   clutc…¹ date_egg   culme…² culme…³ flipp…⁴ body_…⁵ sex   delta…⁶ delta…⁷
+##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;date&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 PAL0708      1 Adelie… Torge… Adul… N1A1  Yes     2007-11-11    39.1    18.7     181    3750 MALE    NA       NA  
+##  2 PAL0708      2 Adelie… Torge… Adul… N1A2  Yes     2007-11-11    39.5    17.4     186    3800 FEMA…    8.95   -24.7
+##  3 PAL0708      3 Adelie… Torge… Adul… N2A1  Yes     2007-11-16    40.3    18       195    3250 FEMA…    8.37   -25.3
+##  4 PAL0708      4 Adelie… Torge… Adul… N2A2  Yes     2007-11-16    NA      NA        NA      NA &lt;NA&gt;    NA       NA  
+##  5 PAL0708      5 Adelie… Torge… Adul… N3A1  Yes     2007-11-16    36.7    19.3     193    3450 FEMA…    8.77   -25.3
+##  6 PAL0708      6 Adelie… Torge… Adul… N3A2  Yes     2007-11-16    39.3    20.6     190    3650 MALE     8.66   -25.3
+##  7 PAL0708      7 Adelie… Torge… Adul… N4A1  No      2007-11-15    38.9    17.8     181    3625 FEMA…    9.19   -25.2
+##  8 PAL0708      8 Adelie… Torge… Adul… N4A2  No      2007-11-15    39.2    19.6     195    4675 MALE     9.46   -24.9
+##  9 PAL0708      9 Adelie… Torge… Adul… N5A1  Yes     2007-11-09    34.1    18.1     193    3475 &lt;NA&gt;    NA       NA  
+## 10 PAL0708     10 Adelie… Torge… Adul… N5A2  Yes     2007-11-09    42      20.2     190    4250 &lt;NA&gt;     9.13   -25.1
+## # … with 334 more rows, 1 more variable: comments &lt;chr&gt;, and abbreviated variable names ¹​clutch_completion,
+## #   ²​culmen_length_mm, ³​culmen_depth_mm, ⁴​flipper_length_mm, ⁵​body_mass_g, ⁶​delta_15_n_o_oo, ⁷​delta_13_c_o_oo</code></pre>
+<h2 id="subsetting-observations">Subsetting Observations</h2>
+<p>Just like we want only a selection of columns, we may only want a
+selection of variables. We can use <code>dplyr</code>’s
+<code>filter()</code> function to subset our data based on the values
+observations. To do this, we need one or more of the following
+operators:</p>
+<ul>
+<li><code>&gt;</code> - greater than</li>
+<li><code>&gt;=</code> -greater than or equal to</li>
+<li><code>&lt;</code> - less than</li>
+<li><code>&lt;=</code> - less than or equal to</li>
+<li><code>!=</code> - not equal to</li>
+<li><code>==</code> - equal to</li>
+<li><code>&amp;</code> - and</li>
+<li><code>|</code> - or</li>
+<li><code>!</code> - not</li>
+</ul>
+<p>For example, let’s pull out all observations in
+<code>penguins_raw</code> that occur either on Biscoe or Dream
+islands:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">&quot;Biscoe&quot;</span> <span class="sc">|</span> island <span class="sc">==</span> <span class="st">&quot;Dream&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 292 × 17
+##    sid     sample species  region island stage iid   clutc…¹ date_egg   culme…² culme…³ flipp…⁴ body_…⁵ sex   delta…⁶
+##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;date&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+##  1 PAL0708     21 Adelie … Anvers Biscoe Adul… N11A1 Yes     2007-11-12    37.8    18.3     174    3400 FEMA…    8.74
+##  2 PAL0708     22 Adelie … Anvers Biscoe Adul… N11A2 Yes     2007-11-12    37.7    18.7     180    3600 MALE     8.66
+##  3 PAL0708     23 Adelie … Anvers Biscoe Adul… N12A1 Yes     2007-11-12    35.9    19.2     189    3800 FEMA…    9.22
+##  4 PAL0708     24 Adelie … Anvers Biscoe Adul… N12A2 Yes     2007-11-12    38.2    18.1     185    3950 MALE     8.43
+##  5 PAL0708     25 Adelie … Anvers Biscoe Adul… N13A1 Yes     2007-11-10    38.8    17.2     180    3800 MALE     9.64
+##  6 PAL0708     26 Adelie … Anvers Biscoe Adul… N13A2 Yes     2007-11-10    35.3    18.9     187    3800 FEMA…    9.21
+##  7 PAL0708     27 Adelie … Anvers Biscoe Adul… N17A1 Yes     2007-11-12    40.6    18.6     183    3550 MALE     8.94
+##  8 PAL0708     28 Adelie … Anvers Biscoe Adul… N17A2 Yes     2007-11-12    40.5    17.9     187    3200 FEMA…    8.08
+##  9 PAL0708     29 Adelie … Anvers Biscoe Adul… N18A1 No      2007-11-10    37.9    18.6     172    3150 FEMA…    8.38
+## 10 PAL0708     30 Adelie … Anvers Biscoe Adul… N18A2 No      2007-11-10    40.5    18.9     180    3950 MALE     8.90
+## # … with 282 more rows, 2 more variables: delta_13_c_o_oo &lt;dbl&gt;, comments &lt;chr&gt;, and abbreviated variable names
+## #   ¹​clutch_completion, ²​culmen_length_mm, ³​culmen_depth_mm, ⁴​flipper_length_mm, ⁵​body_mass_g, ⁶​delta_15_n_o_oo</code></pre>
+<p>Now you try! Let’s pull out all observations from
+<code>penguins</code> for Adelie penguins that have a body mass of at
+least 3700 grams:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Adelie&quot;</span> <span class="sc">&amp;</span> mass <span class="sc">&gt;=</span> <span class="dv">3700</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 77 × 8
+##    species island    bill_length bill_depth flipper_length_mm  mass sex     year
+##    &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
+##  1 Adelie  Torgersen        39.1       18.7               181  3750 male    2007
+##  2 Adelie  Torgersen        39.5       17.4               186  3800 female  2007
+##  3 Adelie  Torgersen        39.2       19.6               195  4675 male    2007
+##  4 Adelie  Torgersen        42         20.2               190  4250 &lt;NA&gt;    2007
+##  5 Adelie  Torgersen        37.8       17.3               180  3700 &lt;NA&gt;    2007
+##  6 Adelie  Torgersen        38.6       21.2               191  3800 male    2007
+##  7 Adelie  Torgersen        34.6       21.1               198  4400 male    2007
+##  8 Adelie  Torgersen        36.6       17.8               185  3700 female  2007
+##  9 Adelie  Torgersen        42.5       20.7               197  4500 male    2007
+## 10 Adelie  Torgersen        46         21.5               194  4200 male    2007
+## # … with 67 more rows</code></pre>
+<h2 id="modifying-variables">Modifying Variables</h2>
+<p>If we want to modify an existing variable, or create a new variable,
+we can use <code>dplyr</code>’s <code>mutate()</code> function. There
+are many possible permutations that could build on this, but a simple
+use case is to create a binary flag for penguins that are over 3700
+grams in size:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">big_size =</span> <span class="fu">ifelse</span>(body_mass_g <span class="sc">&gt;=</span> <span class="dv">3700</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(body_mass_g, big_size)</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 2
+##    body_mass_g big_size
+##          &lt;dbl&gt; &lt;lgl&gt;   
+##  1        3750 TRUE    
+##  2        3800 TRUE    
+##  3        3250 FALSE   
+##  4          NA NA      
+##  5        3450 FALSE   
+##  6        3650 FALSE   
+##  7        3625 FALSE   
+##  8        4675 TRUE    
+##  9        3475 FALSE   
+## 10        4250 TRUE    
+## # … with 334 more rows</code></pre>
+<p>The <code>ifelse()</code> function takes a Boolean condition and then
+specifies what value to return when it is true and what value to return
+when it is false. The result of this for each observation is stored in a
+new variable called <code>big_size</code>.</p>
+<p>I’ve added the <code>select()</code> function to make it easier to
+see the changes our <code>mutate()</code> function made. In reality, you
+wouldn’t want to add this step unless these were the only two columns
+you wanted!</p>
+<p>Now you try to create a binary indicator variable that is
+<code>TRUE</code> when penguins have a bill length greater than 40mm a
+mass greater than or equal to 3700 grams:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">big_penguin =</span> <span class="fu">ifelse</span>(mass <span class="sc">&gt;=</span> <span class="dv">3700</span> <span class="sc">&amp;</span> bill_length <span class="sc">&gt;</span> <span class="dv">40</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mass, bill_length, big_penguin)</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 3
+##     mass bill_length big_penguin
+##    &lt;dbl&gt;       &lt;dbl&gt; &lt;lgl&gt;      
+##  1  3750        39.1 FALSE      
+##  2  3800        39.5 FALSE      
+##  3  3250        40.3 FALSE      
+##  4    NA        NA   NA         
+##  5  3450        36.7 FALSE      
+##  6  3650        39.3 FALSE      
+##  7  3625        38.9 FALSE      
+##  8  4675        39.2 FALSE      
+##  9  3475        34.1 FALSE      
+## 10  4250        42   TRUE       
+## # … with 334 more rows</code></pre>
+<p>With a bit of extra complexity, we might want rename the categories
+for <code>species</code> to be something simpler:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(penguins_raw<span class="sc">$</span>species)</span></code></pre></div>
+<pre><code>## [1] &quot;Adelie Penguin (Pygoscelis adeliae)&quot;       &quot;Gentoo penguin (Pygoscelis papua)&quot;        
+## [3] &quot;Chinstrap penguin (Pygoscelis antarctica)&quot;</code></pre>
+<p>If we wanted to simplify these to <code>adelie</code>,
+<code>gentoo</code>, and <code>chinstrap</code>, we could do the
+following:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>penguins_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species_simple =</span> <span class="fu">case_when</span>(</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    species <span class="sc">==</span> <span class="st">&quot;Adelie Penguin (Pygoscelis adeliae)&quot;</span> <span class="sc">~</span> <span class="st">&quot;adelie&quot;</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    species <span class="sc">==</span> <span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span> <span class="sc">~</span> <span class="st">&quot;gentoo&quot;</span>,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    species <span class="sc">==</span> <span class="st">&quot;Chinstrap penguin (Pygoscelis antarctica)&quot;</span> <span class="sc">~</span> <span class="st">&quot;chinstrap&quot;</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, species_simple)</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 2
+##    species                             species_simple
+##    &lt;chr&gt;                               &lt;chr&gt;         
+##  1 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  2 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  3 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  4 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  5 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  6 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  7 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  8 Adelie Penguin (Pygoscelis adeliae) adelie        
+##  9 Adelie Penguin (Pygoscelis adeliae) adelie        
+## 10 Adelie Penguin (Pygoscelis adeliae) adelie        
+## # … with 334 more rows</code></pre>
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>The ideal with pipes is that we can string all of our functions
+together into a single run:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;penguins_raw.csv&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sid =</span> study_name,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample =</span> sample_number,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">iid =</span> individual_id</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, body_mass_g) <span class="sc">%&gt;%</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">&quot;Biscoe&quot;</span> <span class="sc">|</span> island <span class="sc">==</span> <span class="st">&quot;Dream&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">big_size =</span> <span class="fu">ifelse</span>(body_mass_g <span class="sc">&gt;=</span> <span class="dv">3700</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species_simple =</span> <span class="fu">case_when</span>(</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    species <span class="sc">==</span> <span class="st">&quot;Adelie Penguin (Pygoscelis adeliae)&quot;</span> <span class="sc">~</span> <span class="st">&quot;adelie&quot;</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    species <span class="sc">==</span> <span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span> <span class="sc">~</span> <span class="st">&quot;gentoo&quot;</span>,</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    species <span class="sc">==</span> <span class="st">&quot;Chinstrap penguin (Pygoscelis antarctica)&quot;</span> <span class="sc">~</span> <span class="st">&quot;chinstrap&quot;</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  )) <span class="ot">-&gt;</span> penguins_clean</span></code></pre></div>
+<pre><code>## Rows: 344 Columns: 17
+## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (9): studyName, Species, Region, Island, Stage, Individual ID, Clutch Completion, Sex, Comments
+## dbl  (7): Sample Number, Culmen Length (mm), Culmen Depth (mm), Flipper Length (mm), Body Mass (g), Delta 15 N (o...
+## date (1): Date Egg
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>If we want to write our data, we can use <code>write_csv()</code>
+from the <code>readr</code> package:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(penguins_clean, <span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;penguins_clean.csv&quot;</span>))</span></code></pre></div>
+
+</body>
+</html>

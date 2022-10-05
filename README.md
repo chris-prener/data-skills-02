@@ -5,10 +5,10 @@
 ### Objectives
 At the end of this lesson, participants should be able to:
 
-1. Demonstrate how basic objects, like data frames, are created and explored
-2. Explain how functions, arguments, and packages fit together in `R`'s ecosystem
-3. Demonstrate how to get help from within `R`
-4. Describe what an `.Rproj` (R project) is in basic terms
+1. Describe what an `.Rproj` (R project) is in basic terms
+2. Rename variables both en-masse or one-by-one
+3. Subset observations and columns to create custom cuts of data
+4. Create new variables based on existing data
 
 ### Lesson Resources
 * The [`SETUP.md`](SETUP.md) file contains a list of packages required for this lesson
@@ -35,13 +35,13 @@ With the package installed, you you can download this lesson to your Desktop eas
 usethis::use_course("https://github.com/chris-prener/data-skills-02/archive/master.zip")
 ```
 
-By using `usethis::use_course`, all of the lesson materials will be downloaded to your computer, automatically extracted, and saved to your desktop. The `data-skills-01-master` project should open automatically afterwards. Windows users will have the data downloaded to their user folder (e.g. `C:/Users/<USERNAME>/`).
+By using `usethis::use_course`, all of the lesson materials will be downloaded to your computer, automatically extracted, and saved to your desktop. The `data-skills-02-master` project should open automatically afterwards. Windows users will have the data downloaded to their user folder (e.g. `C:/Users/<USERNAME>/`).
 
 ### Install Other Packages for Today
 In addition to `usethis`, there are a couple of other packages we'll need:
 
 ```r
-install.packages(c("tidyverse", "palmerpenguins", "knitr", "rmarkdown"))
+install.packages(c("tidyverse", "here", "palmerpenguins", "knitr", "rmarkdown"))
 ```
 
 If you've already installed packages from prior data skills sessions, you should only need:

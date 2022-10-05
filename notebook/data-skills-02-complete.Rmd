@@ -1,5 +1,5 @@
 ---
-title: "Data Skills 02 - Introduction to dplyr for Data Wrangling"
+title: "Data Skills 02 - Introduction to dplyr for Data Wrangling - Complete"
 author: "Christopher Prener, Ph.D."
 date: '(`r format(Sys.time(), "%B %d, %Y")`)'
 output:
@@ -43,7 +43,7 @@ penguins <- read_csv(here("data", "penguins.csv"))
 Now, read in `penguins_raw.csv` into an object called `penguins_raw`:
 
 ```{r read-penguins_raw}
-
+penguins_raw <- read_csv(here("data", "penguins_raw.csv"))
 ```
 
 There is also a package called `readxl` that works well for Excel files and another package called `haven` that can read SPSS, Stata, and SAS data files. Both packages are installed when you install the `tidyverse`.
@@ -82,7 +82,12 @@ penguins_raw %>%
 Now, you try on the `penguins` data. Rename `bill_length_mm`, `bill_depth_mm` and `body_mass_g`, ideally removing the units of measure:
 
 ```{r rename-penguins}
-
+penguins %>%
+  rename(
+    bill_length = bill_length_mm,
+    bill_depth = bill_depth_mm,
+    mass = body_mass_g
+  ) -> penguins
 ```
 
 ## Subsetting Columns
@@ -96,7 +101,8 @@ penguins_raw %>%
 Now, you try on the `penguins` data. Select only the columns for species, bill length, and bill depth:
 
 ```{r subset-penguins}
-
+penguins %>%
+  select(species, bill_length, bill_depth)
 ```
 
 The order here matters! `select()` will reorder your columns to match whatever order you enter them in. You can also remove columns:
@@ -129,7 +135,8 @@ penguins_raw %>%
 Now you try! Let's pull out all observations from `penguins` for Adelie penguins that have a body mass of at least 3700 grams:
 
 ```{r filter-adelie}
-
+penguins %>%
+  filter(species == "Adelie" & mass >= 3700)
 ```
 
 ## Modifying Variables
@@ -148,7 +155,9 @@ I've added the `select()` function to make it easier to see the changes our `mut
 Now you try to create a binary indicator variable that is `TRUE` when penguins have a bill length greater than 40mm a mass greater than or equal to 3700 grams:
 
 ```{r big-penguin-big-beak}
-
+penguins %>%
+  mutate(big_penguin = ifelse(mass >= 3700 & bill_length > 40, TRUE, FALSE)) %>% 
+  select(mass, bill_length, big_penguin)
 ```
 
 With a bit of extra complexity, we might want rename the categories for `species` to be something simpler:
