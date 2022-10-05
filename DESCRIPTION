@@ -1,0 +1,16 @@
+Package: data-skills-01
+Title: Data Skills 2 - Introduction to dplyr for Data Wrangling
+Version: 0.1.0
+Authors@R: person("Christopher", "Prener", email = "chris.prener@gmail.com", role = c("aut", "cre"))
+Description: 
+Depends: R (>= 3.5)
+License: CC-BY-SA-4.0 + LICENSE
+Web: https://slu-dss.github.io
+URL: https://github.com/chris-prener/data-skills-02
+BugReports: https://github.com/chris-prener/data-skills-02/issues
+Imports:
+    dplyr,
+    knitr,
+    palmerpenguins,
+    rmarkdown,
+    usethis

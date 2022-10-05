@@ -1,0 +1,21 @@
+---
+title: "Data Skills 02 - Introduction to dplyr for Data Wranglings"
+author: "Christopher Prener, Ph.D."
+date: '(`r format(Sys.time(), "%B %d, %Y")`)'
+output:
+  github_document: default
+  html_notebook: default
+---
+
+## R Projects and Working Directories
+R Projects are a special type of file associated with RStudio. They create self-contained directories and environments that increase the reproducibility of your work. They also take care of managing the working directory for you. The working directory is an often difficult to grasp concept at first. Think of it as a postal address - this is where `R` will expect all information to come from and go to about a project. You can view the current working directory with `getwd()`:
+
+```{r check-wd}
+getwd()
+```
+
+R projects create a home for your analyses. When you set a R project up, it will change the **working directory** to the project's directory. This means that all of the data you save from RStudio will be saved there by default. It also means that you can open files saved in that directory without needing to worry about file paths.
+
+R projects can also help you navigate a wrinkle with `.Rmd` files, which automatically recognize the folder they reside in as the working directory. We'll talk more about this next time!
+
+We'll give you an R project directory to download for each session. However, if you want to create a new project for your own work, go to `File > New Project...` and follow the prompts. You can create a new project directory, associate a project with an existing directory, and even add `git` version control if you know how to use it!
