@@ -27,14 +27,39 @@ additional packages:
 ``` r
 # tidyverse packages
 library(dplyr)     # data wrangling
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 library(readr)     # read and write csv files
 
 # data wrangling
 library(janitor)   # data wrangling
+```
 
+    ## 
+    ## Attaching package: 'janitor'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     chisq.test, fisher.test
+
+``` r
 # manage file paths
 library(here)      # manage file paths
 ```
+
+    ## here() starts at /Users/prenec/Documents/GitHub/data_skills/data-skills-02
 
 ## Reading Data
 
@@ -121,6 +146,9 @@ penguins_raw %>%
     iid = individual_id
   ) -> penguins_raw
 ```
+
+The `rename()` function sets *new* variable names equal to *old*
+variable names. I personally find this confusing, but here we are!
 
 Now, you try on the `penguins` data. Rename `bill_length_mm`,
 `bill_depth_mm` and `body_mass_g`, ideally removing the units of
@@ -247,6 +275,10 @@ penguins_raw %>%
     ## 10 PAL0708     30 Adelie … Anvers Biscoe Adul… N18A2 No      2007-11-10    40.5    18.9     180    3950 MALE     8.90
     ## # … with 282 more rows, 2 more variables: delta_13_c_o_oo <dbl>, comments <chr>, and abbreviated variable names
     ## #   ¹​clutch_completion, ²​culmen_length_mm, ³​culmen_depth_mm, ⁴​flipper_length_mm, ⁵​body_mass_g, ⁶​delta_15_n_o_oo
+
+Here, we set up a Boolean rule that is `TRUE` if an island is one name
+*or* the other. Note that we cannot used *and* here because an island
+cannot simultaneously have two names.
 
 Now you try! Let’s pull out all observations from `penguins` for Adelie
 penguins that have a body mass of at least 3700 grams:

@@ -79,6 +79,8 @@ penguins_raw %>%
   ) -> penguins_raw
 ```
 
+The `rename()` function sets *new* variable names equal to *old* variable names. I personally find this confusing, but here we are!
+
 Now, you try on the `penguins` data. Rename `bill_length_mm`, `bill_depth_mm` and `body_mass_g`, ideally removing the units of measure:
 
 ```{r rename-penguins}
@@ -131,6 +133,8 @@ For example, let's pull out all observations in `penguins_raw` that occur either
 penguins_raw %>%
   filter(island == "Biscoe" | island == "Dream")
 ```
+
+Here, we set up a Boolean rule that is `TRUE` if an island is one name *or* the other. Note that we cannot used *and* here because an island cannot simultaneously have two names.
 
 Now you try! Let's pull out all observations from `penguins` for Adelie penguins that have a body mass of at least 3700 grams:
 
