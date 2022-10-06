@@ -41,13 +41,13 @@ By using `usethis::use_course`, all of the lesson materials will be downloaded t
 In addition to `usethis`, there are a couple of other packages we'll need:
 
 ```r
-install.packages(c("tidyverse", "here", "palmerpenguins", "knitr", "rmarkdown"))
+install.packages(c("tidyverse", "here", "janitor", "palmerpenguins", "knitr", "rmarkdown"))
 ```
 
 If you've already installed packages from prior data skills sessions, you should only need:
 
 ```r
-install.packages("tidyverse")
+install.packages(c("tidyverse", "here", "janitor"))
 ```
 
 Now we're ready to go!
